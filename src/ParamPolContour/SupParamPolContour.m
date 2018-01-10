@@ -18,14 +18,14 @@ classdef SupParamPolContour < B_ParamPolContour
         function obj = SupParamPolContour( varargin )
             obj.funcWithD_ = varargin{ 1 };
             obj.contourList_ = varargin{ 2 };
-            obj.coefList = varargin{ 3 };
+            obj.coefList_ = varargin{ 3 };
             if nargin > 3
                 obj.splineN_ = varargin{ 4 };
             end
-            obj.coefListT_ = transpose( coefList );
-            obj.contourN_ = length( coefList );
-            obj.coefSum_ = sum( coefList );
-            obj.coefListNormal_ = coefList ./ obj.coefSum_;
+            obj.coefListT_ = transpose( obj.coefList_ );
+            obj.contourN_ = length( obj.coefList_ );
+            obj.coefSum_ = sum( obj.coefList_ );
+            obj.coefListNormal_ = obj.coefList_ ./ obj.coefSum_;
             obj.coefListNormalT_ = transpose( obj.coefListNormal_ );
             obj.SolveParamDifferential();
         end
