@@ -22,7 +22,7 @@ gemContour = GemParamPolContour( ...
 
 testContour = gemContour;
 
-N = 2^7;
+N = 2^4;
 paramStart = -pi;
 paramEnd = pi;
 paramRange = paramEnd - paramStart;
